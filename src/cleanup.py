@@ -30,5 +30,6 @@ for filename in tqdm(os.listdir(directory)):
             img_finding.append(finding)
             img_impression.append(impression)
 
-df = pd.DataFrame([img, img_finding, img_impression])
-print(df.head())
+df = pd.DataFrame({'image_uri': img, 'image_finding': img_finding,
+                   'image_impression': img_impression})
+df.to_csv('data.csv')
