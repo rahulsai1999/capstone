@@ -5,16 +5,21 @@ from PIL import Image
 import streamlit as st
 import custom_model as cm
 
-st.title("Medical Report Generation using Chest X-Ray Images")
-st.header("Capstone Project")
-st.header("R.S.Rahul Sai")
+_, col2, _ = st.beta_columns([1, 2, 1])
+with col2:
+    st.title("Medical Report Generation using Chest X-Ray Images")
+    st.header("Capstone Project (17BCE0136)")
 
+
+st.markdown("---")
 
 col1, col2 = st.beta_columns(2)
 image_1 = col1.file_uploader("Frontal X-Ray", type=['png', 'jpg', 'jpeg'])
 image_2 = col1.file_uploader("Lateral X-Ray", type=['png', 'jpg', 'jpeg'])
 
 predict_button = col2.button('Generate Report')
+col2.markdown("***")
+col2.text("")
 
 
 @st.cache
