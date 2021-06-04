@@ -5,6 +5,9 @@ from PIL import Image
 import streamlit as st
 import custom_model as cm
 
+st.set_page_config(
+    page_title="Medical Report Generation using CXR Images", layout="wide")
+
 _, col2, _ = st.beta_columns([1, 2, 1])
 with col2:
     st.title("Medical Report Generation using Chest X-Ray Images")
@@ -18,6 +21,7 @@ image_1 = col1.file_uploader("Frontal X-Ray", type=['png', 'jpg', 'jpeg'])
 image_2 = col1.file_uploader("Lateral X-Ray", type=['png', 'jpg', 'jpeg'])
 
 predict_button = col2.button('Generate Report')
+
 col2.markdown("***")
 col2.text("")
 
