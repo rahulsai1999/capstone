@@ -47,12 +47,12 @@ def predict(image_1, image_2, model_tokenizer, predict_button=predict_button):
 
             col2.image([image_1, image_2], width=300)
             caption = cm.function1([image_1], [image_2], model_tokenizer)
-            col2.markdown(" # **Impression:**")
+            col2.markdown(" ## **Report:**")
             impression = col2.empty()
             impression.write(caption[0])
-            time_taken = "Time Taken : %i seconds" % (
-                time.process_time()-start)
-            col2.write(time_taken)
+            # time_taken = "Time Taken : %i seconds" % (
+            #     time.process_time()-start)
+            # col2.write(time_taken)
             del image_1, image_2
         else:
             st.markdown("## Please upload an Image")
